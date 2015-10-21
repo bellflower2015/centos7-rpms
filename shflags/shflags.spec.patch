@@ -1,0 +1,35 @@
+--- shflags.spec.orig	2015-10-18 20:28:09.204865282 +0900
++++ shflags.spec	2015-10-18 20:38:52.570857619 +0900
+@@ -1,12 +1,18 @@
++%global githash af8d27d
++%global gitdate 20130117
++%global checkout %{gitdate}git%{githash}
++
+ Name:       shflags
+-Version:    1.0.3
+-Release:    8%{?dist}
++Version:    1.0.3.%{checkout}
++Release:    1%{?dist}
+ Summary:    Simple handling of command-line flags in Bourne based Unix scripts
+ 
+ Group:      Development/Languages
+ License:    LGPLv2
+-URL:        http://code.google.com/p/shflags/
+-Source0:    http://shflags.googlecode.com/files/shflags-1.0.3.tgz
++URL:        https://github.com/kward/shflags
++# You can get this tarball by cloning the repository from github and checking
++# out revision %%{githash}
++Source0:    shflags-1.0.3.%{checkout}.tar.gz
+ 
+ BuildArch:  noarch
+ 
+@@ -52,6 +58,9 @@ cp -p src/shflags %{buildroot}/%{_datadi
+ %{_datadir}/%{name}
+ 
+ %changelog
++* Sun Oct 18 2015 Kikyou Akino <bellflower@web4u.jp> - 1.0.3.20130117gitaf8d27d-1
++- Rebuilt for https://github.com/bellflower2015/centos6-rpms
++
+ * Fri Jun 19 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.3-8
+ - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+ 

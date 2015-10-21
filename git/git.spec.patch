@@ -1,0 +1,40 @@
+--- git.spec.orig	2015-10-21 16:18:09.996665503 +0900
++++ git.spec	2015-10-21 16:19:13.260285459 +0900
+@@ -25,7 +25,7 @@
+ %global emacs_old           0
+ %global docbook_suppress_sp 0
+ %global enable_ipv6         0
+-%global use_prebuilt_docs   0
++%global use_prebuilt_docs   1
+ %global filter_yaml_any     0
+ %endif
+ 
+@@ -71,10 +71,10 @@ Patch4:         git-infinite-loop.patch
+ 
+ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+ 
+-%if ! %{use_prebuilt_docs} && ! 0%{?_without_docs}
++#%if ! %{use_prebuilt_docs} && ! 0%{?_without_docs}
+ BuildRequires:  asciidoc >= 8.4.1
+ BuildRequires:  xmlto
+-%endif
++#%endif
+ BuildRequires:  desktop-file-utils
+ BuildRequires:  emacs
+ BuildRequires:  expat-devel
+@@ -444,12 +444,12 @@ make -C contrib/credential/gnome-keyring
+ %endif
+ 
+ make -C contrib/subtree install
+-%if ! %{use_prebuilt_docs}
++#%if ! %{use_prebuilt_docs}
+ make -C contrib/subtree install-doc
+-%endif
++#%endif
+ # it's ugly hack, but this file don't need to be copied to this directory
+ # it's already part of git-core-doc and it's alone here
+-rm -f %{buildroot}%{_pkgdocdir}/git-subtree.html
++#rm -f %{buildroot}%{_pkgdocdir}/git-subtree.html
+ 
+ mkdir -p %{buildroot}%{_sysconfdir}/httpd/conf.d
+ install -pm 0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/httpd/conf.d/git.conf

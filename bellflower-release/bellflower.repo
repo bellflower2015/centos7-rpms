@@ -1,0 +1,5 @@
+[bellflower]
+name=Bellflower's RPM repository
+baseurl=http://bellflower.web4u.jp/downloads/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1

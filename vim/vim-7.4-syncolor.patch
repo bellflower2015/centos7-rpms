@@ -1,0 +1,24 @@
+--- vim74/src/syntax.c.orig	2015-10-21 17:12:08.861732236 +0900
++++ vim74/src/syntax.c	2015-10-21 17:12:53.060734999 +0900
+@@ -6864,8 +6864,8 @@ static char *(highlight_init_light[]) =
+ 	CENT("Visual term=reverse",
+ 	     "Visual term=reverse guibg=LightGrey"),
+ #ifdef FEAT_DIFF
+-	CENT("DiffAdd term=bold ctermbg=LightBlue",
+-	     "DiffAdd term=bold ctermbg=LightBlue guibg=LightBlue"),
++	CENT("DiffAdd term=bold ctermbg=LightRed",
++	     "DiffAdd term=bold ctermbg=LightRed guibg=LightBlue"),
+ 	CENT("DiffChange term=bold ctermbg=LightMagenta",
+ 	     "DiffChange term=bold ctermbg=LightMagenta guibg=LightMagenta"),
+ 	CENT("DiffDelete term=bold ctermfg=Blue ctermbg=LightCyan",
+@@ -6952,8 +6952,8 @@ static char *(highlight_init_dark[]) =
+ 	CENT("Visual term=reverse",
+ 	     "Visual term=reverse guibg=DarkGrey"),
+ #ifdef FEAT_DIFF
+-	CENT("DiffAdd term=bold ctermbg=DarkBlue",
+-	     "DiffAdd term=bold ctermbg=DarkBlue guibg=DarkBlue"),
++	CENT("DiffAdd term=bold ctermbg=DarkRed",
++	     "DiffAdd term=bold ctermbg=DarkRed guibg=DarkBlue"),
+ 	CENT("DiffChange term=bold ctermbg=DarkMagenta",
+ 	     "DiffChange term=bold ctermbg=DarkMagenta guibg=DarkMagenta"),
+ 	CENT("DiffDelete term=bold ctermfg=Blue ctermbg=DarkCyan",

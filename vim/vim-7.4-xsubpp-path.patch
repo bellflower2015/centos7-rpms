@@ -1,0 +1,11 @@
+--- vim-7.4.898/src/main.aap.orig	2015-10-21 17:52:02.179881874 +0900
++++ vim-7.4.898/src/main.aap	2015-10-21 17:52:54.069885119 +0900
+@@ -417,7 +417,7 @@ update-po {virtual}:
+ 
+ auto/if_perl.c: if_perl.xs
+         :sys $PERL -e 'unless ( $$] >= 5.005 ) { for (qw(na defgv errgv)) { print "#define PL_$$_ $$_\n" }}' > $target
+-        :sys $PERL $PERLLIB/ExtUtils/xsubpp -prototypes -typemap \
++        :sys $PERL $PERLLIB/vendor_perl/ExtUtils/xsubpp -prototypes -typemap \
+             $PERLLIB/ExtUtils/typemap if_perl.xs >> $target
+ 
+ auto/osdef.h: auto/config.h osdef.sh osdef1.h.in osdef2.h.in
